@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <!--ссылки на бесплатные шрифты-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700,800,900&display=swap&subset=cyrillic-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="nav-wrapper">
+                <div class="logo">  
+                    <img src="img/logo3.jpeg">
+                </div>
+
+                <ul class="nav">
+                    
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html">Назад</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-content">
+                <div class="header-desc">
+
+                    <h1 class="header__title">Заполнение заявления</h1>
+
+                    <div class="header__text">
+                        <p>Для офрмлени заявления нужно заполнить форму заявления, <span>расположенную ниже: </span> </p>
+                        <p>
+                            Заполните следующие поля:    
+                        </p>
+                        <ul>
+                            <li>название учатка: <br> <input type="text" id="NumberUchstcka">  </li>                          
+                            <li>описание проблемы:<br><input type="text" id="problem" ></li>
+                            <li>Ф.И.О. мастера: <br> <input type="text" id="NameWorker" ></li>
+                        </ul>
+                        <!--<a  href="statement.html" class="header__btn">Оформить Завку на ремонт</a> -->
+                        <button onclick="MyFunction()"> Принять заявку </button>
+                        <script>
+                            function  MyFunction() {
+                            
+                                let поле_название_участка = document.getElementById("NumberUchstcka").value; // получаем значение номреа участка
+                                let  поле_описание_проблемы =    document.getElementById("problem").value;
+                                let  поле_фио_мастера =       document.getElementById("NameWorker").value;
+                                
+                                //Проверяем на заполненность поля
+                                if(поле_название_участка=="" || поле_описание_проблемы=="" || поле_фио_мастера=="" ){
+                                    alert("Вы не полностью заполнили поля");
+                                }
+                                else{
+                                    alert("Спасибо, ваша заявка на участок: "+ поле_название_участка +" принята.");
+                                    
+                                    setTimeout(work_zayvka, 7000);//таймер вызывает функцию через 15сек
+                                
+                                    setTimeout(end_work_zayvka, 14000);
+                                }
+                                
+                                function work_zayvka () {
+                                    alert("Ваша зявка на ремонт участка под названием: "+поле_название_участка+" принята к исполнению.");
+                                }
+                                
+                                function end_work_zayvka () {
+                                    alert("Ремонтные работы по участку: "+поле_название_участка+" завершены.");
+                                }
+                                
+                              
+                                
+                            }
+                            
+                        </script>
+                        
+
+                    </div>
+                </div>
+               <div class="header-photo">
+                    <img id="imgg" src="img/kombain.jpg" alt="Photo">
+                </div> 
+            </div>
+
+            
+
+        </div>
+
+    </header>
+    
+   
+
+    <footer class="footer">
+        <p>Учебный проект <a href="https://www.sibsiu.ru/">СибГИУ</a></p>
+        
+    </footer>
+
+</body>
+
+</html>
